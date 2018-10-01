@@ -6,6 +6,7 @@ class App extends Component {
     super();
 
     this.state = {
+      query: '',
       data: [],
       error: '',
     };
@@ -20,6 +21,7 @@ class App extends Component {
             return res;
         }).then(json => {
           this.setState({
+              query: query,
               data: json,
               error: json.Error
           }, () => {
@@ -35,7 +37,7 @@ class App extends Component {
   render () {
     return (
       <div>
-        <h1> Input a number 1-800 </h1>
+        <h1> Input a number 1 - 802 </h1>
         <Search search={this.search} />
         <p>{this.state.data.name}</p>
       </div>

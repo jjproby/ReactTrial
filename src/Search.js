@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 
-class Search extends Component {
+class query extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      search: '',
+      query: '',
     };
 
-    this.updateSearch = this.updateSearch.bind(this);
+    this.updatequery = this.updatequery.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateSearch(event) {
-    this.setState({search: event.target.value});
+  updatequery(event) {
+    this.setState({query: event.target.value});
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.search(this.state);
-    this.setState({ search: "" });
+    this.setState({ query: "" });
   }
 
   render() {
@@ -26,8 +27,8 @@ class Search extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text"
-              value={this.state.search}
-              onChange={this.updateSearch}/>
+              value={this.state.query}
+              onChange={this.updatequery}/>
         </form>
       </div>
     )
@@ -35,4 +36,4 @@ class Search extends Component {
 }
 
 
-export default Search
+export default query
