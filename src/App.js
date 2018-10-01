@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './Search';
 
 class App extends Component {
-  render() {
+  constructor() {
+    super();
+
+    this.state = {
+      data: [],
+      error: '',
+    };
+  }
+
+  componentWillMount() {
+    fetch(`https://pokeapi.co/api/v2/pokemon/800/`)
+        .then(res => res.json())
+        .then(res => {
+            return res;
+        }).then(json => {
+          this.setState({
+              data: json,
+              error: json.Error
+          });
+        }).catch(err => this.setState({
+            error: 'Error Occurred: Try Again',
+            data: [],
+        }));
+  }
+
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <input type="text" />
+        <p>{this.state.data.name}</p>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
