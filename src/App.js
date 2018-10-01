@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Search';
+import Search from './Search';
 
 class App extends Component {
   constructor() {
@@ -30,7 +30,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <input type="text" />
+        <h1> Input a number 1-800 </h1>
+        < Search </>
         <p>{this.state.data.name}</p>
       </div>
     )

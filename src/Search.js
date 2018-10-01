@@ -10,6 +10,7 @@ class Search extends Component {
 
   updateSearch(event) {
     this.setState({search: event.target.value.substr(0,3)});
+    console.log("You have changed a thing");
   }
 
   render() {
