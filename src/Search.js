@@ -15,8 +15,8 @@ class Search extends Component {
 
   render() {
     return (
-      console.log(this.props.searchDataAPI)
       <div>
+      console.log(this.props.searchDataAPI)
       <input type="text"
           value={this.state.search}
           onChange = {this.updateSearch.bind(this)}/>
