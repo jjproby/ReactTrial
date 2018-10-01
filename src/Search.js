@@ -6,6 +6,8 @@ class Search extends Component {
     this.state = {
       search: ''
     };
+
+    this.updateSearch = this.updateSearch.bind(this);
   }
 
   updateSearch(event) {
@@ -21,10 +23,10 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}
+        <form onSubmit={this.handleSubmit}>
           <input type="text"
               value={this.state.search}
-              onChange = {this.updateSearch.bind(this)}/>
+              onChange={this.updateSearch}/>
         </form>
       </div>
     )
