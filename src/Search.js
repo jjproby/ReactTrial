@@ -10,16 +10,22 @@ class Search extends Component {
 
   updateSearch(event) {
     this.setState({search: event.target.value});
-    console.log("You have changed a thing");
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.search(this.search);
+    this.setState(search: "");
   }
 
   render() {
-    console.log(this.props.searchDataAPI + this.state.search)
     return (
       <div>
-      <input type="text"
-          value={this.state.search}
-          onChange = {this.updateSearch.bind(this)}/>
+      <form onSubmit={this.handleSubmit}
+        <input type="text"
+            value={this.state.search}
+            onChange = {this.updateSearch.bind(this)}/>
+        </form>
       </div>
     )
   }

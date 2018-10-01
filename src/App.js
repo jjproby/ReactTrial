@@ -12,7 +12,11 @@ class App extends Component {
   }
 
   componentWillMount() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/800/`)
+
+  }
+
+  search({query}) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${query}/`)
         .then(res => res.json())
         .then(res => {
             return res;
@@ -20,6 +24,9 @@ class App extends Component {
           this.setState({
               data: json,
               error: json.Error
+          }, () => {
+            console.log(query);
+            console.log(json);
           });
         }).catch(err => this.setState({
             error: 'Error Occurred: Try Again',
@@ -28,11 +35,10 @@ class App extends Component {
   }
 
   render () {
-    var searchData = 'https://pokeapi.co/api/v2/pokemon/'
     return (
       <div>
         <h1> Input a number 1-800 </h1>
-        < Search searchDataAPI = {searchData}/>
+        <Search search={this.search}/>
         <p>{this.state.data.name}</p>
       </div>
     )
