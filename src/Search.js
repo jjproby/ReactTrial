@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Search extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       search: ''
     };
@@ -18,7 +18,7 @@ class Search extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.search(this.search);
-    this.setState(search: "");
+    this.setState({ search: "" });
   }
 
   render() {
