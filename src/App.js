@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   render () {
-    let searchData = 'https://pokeapi.co/api/v2/pokemon/'
+    var searchData = 'https://pokeapi.co/api/v2/pokemon/'
     return (
       <div>
         <h1> Input a number 1-800 </h1>
