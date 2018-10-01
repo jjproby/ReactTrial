@@ -14,7 +14,7 @@ class Search extends Component {
   }
 
   render() {
-    console.log(this.props.searchDataAPI)
+    console.log(this.props.searchDataAPI + "345/")
     return (
       <div>
       <input type="text"
