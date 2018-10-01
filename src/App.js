@@ -9,10 +9,8 @@ class App extends Component {
       data: [],
       error: '',
     };
-  }
 
-  componentWillMount() {
-
+    this.search = this.search.bind(this);
   }
 
   search({query}) {
@@ -38,7 +36,7 @@ class App extends Component {
     return (
       <div>
         <h1> Input a number 1-800 </h1>
-        <Search search={this.search}/>
+        <Search search={this.search} />
         <p>{this.state.data.name}</p>
       </div>
     )
