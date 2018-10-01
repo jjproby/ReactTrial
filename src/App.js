@@ -32,7 +32,6 @@ class App extends Component {
     return (
       <div>
         <h1> Input a number 1-800 </h1>
-        < Search />
         < Search searchDataAPI = {searchData}/>
         <p>{this.state.data.name}</p>
       </div>
