@@ -9,12 +9,12 @@ class Search extends Component {
   }
 
   updateSearch(event) {
-    this.setState({search: event.target.value.substr(0,3)});
+    this.setState({search: event.target.value});
     console.log("You have changed a thing");
   }
 
   render() {
-    console.log(this.props.searchDataAPI + "345/")
+    console.log(this.props.searchDataAPI + this.state.search)
     return (
       <div>
       <input type="text"
