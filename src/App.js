@@ -23,10 +23,10 @@ class App extends Component {
           this.setState({
               query: query,
               data: json,
-              error: json.Error
+              error: json.Error,
           }, () => {
             console.log(query);
-            console.log(json);
+            //console.log(json);
           });
         }).catch(err => this.setState({
             error: 'Error Occurred: Try Again',
@@ -35,17 +35,24 @@ class App extends Component {
   }
 
   render () {
+    console.log(this.state.data)
+    console.log(this.state.data.abilities)
+    const abilities = [];
+    console.log(abilities)
+    console.log(abilities[0])
     return (
       <div>
         <h1> Input a number 1 - 802 </h1>
         <Search search={this.search} />
-        <p>{this.state.data.name}</p>
+        <p> name : {this.state.data.name}</p>
+        <p> id : {this.state.data.id}</p>
+        <p> height : {this.state.data.height}</p>
+        <p> weight : {this.state.data.weight}</p>
         {
           this.state.error
           ? <p>{this.state.error}</p>
           : null
         }
-
       </div>
     )
   }
