@@ -36,10 +36,22 @@ class App extends Component {
 
   render () {
     console.log(this.state.data)
-    console.log(this.state.data.abilities)
-    const abilities = [];
-    console.log(abilities)
-    console.log(abilities[0])
+    //console.log(this.state.data.abilities)
+    const abilities = this.state.data.abilities
+    console.log(abilities);
+
+    let abilitiesList = [];
+    let sprite = null;
+
+    if (abilities !== undefined) {
+      abilitiesList = this.state.data.abilities.map((ability, i) => {
+        return (
+          <li key={i}>{ability.ability.name}</li>
+        );
+      })
+      sprite = <img src={this.state.data.sprites.front_default} />;
+    }
+
     return (
       <div>
         <h1> Input a number 1 - 802 </h1>
@@ -53,6 +65,10 @@ class App extends Component {
           ? <p>{this.state.error}</p>
           : null
         }
+        <ul>
+          {abilitiesList}
+          {sprite}
+        </ul>
       </div>
     )
   }
