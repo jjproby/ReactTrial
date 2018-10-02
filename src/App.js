@@ -40,6 +40,12 @@ class App extends Component {
         <h1> Input a number 1 - 802 </h1>
         <Search search={this.search} />
         <p>{this.state.data.name}</p>
+        {
+          this.state.error
+          ? <p>{this.state.error}</p>
+          : null
+        }
+
       </div>
     )
   }
