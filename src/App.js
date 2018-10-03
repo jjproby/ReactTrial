@@ -55,6 +55,7 @@ class App extends Component {
 
     let abilitiesList = [];
     let sprite = null;
+    let shinysprite = null;
     let gameList = [];
 
     if (abilities !== undefined) {
@@ -63,7 +64,8 @@ class App extends Component {
           <li key={i}>{ability.ability.name}</li>
         );
       })
-      sprite = <img src={this.state.data.sprites.front_default} />;
+      sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
+      shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
     }
 
     if (games !== undefined) {
@@ -84,11 +86,6 @@ class App extends Component {
           <p> id : {this.state.data.id}</p>
           <p> height : {this.state.data.height}</p>
           <p> weight : {this.state.data.weight}</p>
-          {
-            this.state.error
-            ? <p>{this.state.error}</p>
-            : null
-          }
           <p> abilities: </p>
           <ul>
             {abilitiesList}
@@ -97,7 +94,12 @@ class App extends Component {
           <ul>
             {gameList}
           </ul>
-          <p> {sprite} </p>
+          <p> {sprite} {shinysprite}</p>
+          {
+            this.state.error
+            ? <p>{this.state.error}</p>
+            : null
+          }
         </div>
       </Wrapper>
     )
