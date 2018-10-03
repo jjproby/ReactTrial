@@ -50,13 +50,16 @@ class App extends Component {
     //console.log(this.state.data.abilities)
     const abilities = this.state.data.abilities
     const games = this.state.data.game_indices
-    console.log(abilities);
-    console.log(games);
 
     let abilitiesList = [];
     let sprite = null;
     let shinysprite = null;
     let gameList = [];
+    let button = null;
+
+    hideThing = () => {
+      document.getElementById('sprite1').hidden = "true"
+    }
 
     if (abilities !== undefined) {
       abilitiesList = this.state.data.abilities.map((ability, i) => {
@@ -66,6 +69,7 @@ class App extends Component {
       })
       sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
       shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
+      button = <button type="button" onClick={hideThing}> Button </button>
     }
 
     if (games !== undefined) {
@@ -94,7 +98,8 @@ class App extends Component {
           <ul>
             {gameList}
           </ul>
-          <p> {sprite} {shinysprite}</p>
+          <p id="sprite1"> {sprite} {shinysprite}</p>
+          <p> {button} </p>
           {
             this.state.error
             ? <p>{this.state.error}</p>
