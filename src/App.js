@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import Search from './Search';
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  text-align: center;
+`;
+
+const Wrapper = styled.body`
+  padding: 4em;
+  background: papayawhip;
+`;
 
 class App extends Component {
   constructor() {
@@ -13,6 +23,7 @@ class App extends Component {
 
     this.search = this.search.bind(this);
   }
+
 
   search({query}) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${query}/`)
@@ -53,23 +64,27 @@ class App extends Component {
     }
 
     return (
-      <div>
-        <h1> Input a number 1 - 802 </h1>
-        <Search search={this.search} />
-        <p> name : {this.state.data.name}</p>
-        <p> id : {this.state.data.id}</p>
-        <p> height : {this.state.data.height}</p>
-        <p> weight : {this.state.data.weight}</p>
-        {
-          this.state.error
-          ? <p>{this.state.error}</p>
-          : null
-        }
-        <ul>
-          {abilitiesList}
-          {sprite}
-        </ul>
-      </div>
+      <Wrapper>
+        <div>
+          <Title> SEARCH FOR POKEMON </Title>
+          <h2> Input a number 1 - 802 </h2>
+          <Search search={this.search} />
+          <p> name : {this.state.data.name}</p>
+          <p> id : {this.state.data.id}</p>
+          <p> height : {this.state.data.height}</p>
+          <p> weight : {this.state.data.weight}</p>
+          {
+            this.state.error
+            ? <p>{this.state.error}</p>
+            : null
+          }
+          <p> abilities: </p>
+          <ul>
+            {abilitiesList}
+          </ul>
+          <p> {sprite} </p>
+        </div>
+      </Wrapper>
     )
   }
 }
