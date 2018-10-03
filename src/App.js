@@ -6,7 +6,7 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const Wrapper = styled.body`
+const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
 `;
@@ -49,10 +49,13 @@ class App extends Component {
     console.log(this.state.data)
     //console.log(this.state.data.abilities)
     const abilities = this.state.data.abilities
+    const games = this.state.data.game_indices
     console.log(abilities);
+    console.log(games);
 
     let abilitiesList = [];
     let sprite = null;
+    let gameList = [];
 
     if (abilities !== undefined) {
       abilitiesList = this.state.data.abilities.map((ability, i) => {
@@ -61,6 +64,14 @@ class App extends Component {
         );
       })
       sprite = <img src={this.state.data.sprites.front_default} />;
+    }
+
+    if (games !== undefined) {
+      gameList = this.state.data.game_indices.map((game, i) => {
+        return (
+          <li key={i}>{game.version.name}</li>
+        );
+      })
     }
 
     return (
@@ -81,6 +92,10 @@ class App extends Component {
           <p> abilities: </p>
           <ul>
             {abilitiesList}
+          </ul>
+          <p> games: </p>
+          <ul>
+            {gameList}
           </ul>
           <p> {sprite} </p>
         </div>
