@@ -57,8 +57,14 @@ class App extends Component {
     let gameList = [];
     let button = null;
 
-    hideThing = () => {
-      document.getElementById('sprite1').hidden = "true"
+    const hideThing = () => {
+      if (document.getElementById('sprite1').hidden === false) {
+        document.getElementById('sprite1').hidden = true;
+        document.getElementById('sprite2').hidden = false;
+      } else {
+        document.getElementById('sprite1').hidden = false;
+        document.getElementById('sprite2').hidden = true;
+      }
     }
 
     if (abilities !== undefined) {
@@ -69,7 +75,7 @@ class App extends Component {
       })
       sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
       shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
-      button = <button type="button" onClick={hideThing}> Button </button>
+      button = <button type="button" onClick={hideThing}> Change Button </button>
     }
 
     if (games !== undefined) {
@@ -98,7 +104,8 @@ class App extends Component {
           <ul>
             {gameList}
           </ul>
-          <p id="sprite1"> {sprite} {shinysprite}</p>
+          <p id="sprite1"> {sprite} Default</p>
+          <p id="sprite2" hidden = "true"> {shinysprite} Shiny</p>
           <p> {button} </p>
           {
             this.state.error
