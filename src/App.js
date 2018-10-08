@@ -75,7 +75,7 @@ class App extends Component {
       })
       sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
       shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
-      button = <button type="button" onClick={hideThing}> Change Button </button>
+      button = <button type="button" onClick={hideThing}> Change Color </button>
     }
 
     if (games !== undefined) {
@@ -91,7 +91,7 @@ class App extends Component {
         <div>
           <Title> SEARCH FOR POKEMON </Title>
           <h2> Input a number 1 - 802 </h2>
-          <Search search={this.search} />
+          <Search search={this.search}/>
           <p> name : {this.state.data.name}</p>
           <p> id : {this.state.data.id}</p>
           <p> height : {this.state.data.height}</p>
@@ -104,8 +104,10 @@ class App extends Component {
           <ul>
             {gameList}
           </ul>
-          <p id="sprite1"> {sprite} Default</p>
-          <p id="sprite2" hidden = "true"> {shinysprite} Shiny</p>
+          <p id="sprite1"> {sprite}
+          <br /> Default</p>
+          <p id="sprite2" hidden = "true"> {shinysprite}
+          <br / > Shiny</p>
           <p> {button} </p>
           {
             this.state.error
