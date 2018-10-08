@@ -93,6 +93,10 @@ class App extends Component {
       }
     }
 
+    const test = () => {
+      window.location.href = '../public/abilities.html'
+    }
+
     if (abilities !== undefined) {
       abilitiesList = this.state.data.abilities.map((ability, i) => {
         return (
@@ -154,6 +158,7 @@ class App extends Component {
             ? <p>{this.state.error}</p>
             : null
           }
+          <button onClick={test}> New Page </button>
         </div>
       </Wrapper>
     )
