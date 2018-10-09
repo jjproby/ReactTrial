@@ -8,7 +8,8 @@ const Title = styled.h1`
 
 const Wrapper = styled.section`
   padding: 4em;
-  background: papayawhip;
+  background: #5995ea;
+  outline: 5px solid black;
 `;
 
 const Section = styled.p`
@@ -93,10 +94,6 @@ class App extends Component {
       }
     }
 
-    const test = () => {
-      window.location.href = '../public/abilities.html'
-    }
-
     if (abilities !== undefined) {
       abilitiesList = this.state.data.abilities.map((ability, i) => {
         return (
@@ -158,7 +155,6 @@ class App extends Component {
             ? <p>{this.state.error}</p>
             : null
           }
-          <button onClick={test}> New Page </button>
         </div>
       </Wrapper>
     )

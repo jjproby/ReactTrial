@@ -15,3 +15,8 @@ ul.header li a {
   display: inline-block;
   padding: 20px;
 }
+
+ul.header {
+  background-color: #5995ea;
+  outline: 5px solid black;
+}

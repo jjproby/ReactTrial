@@ -13,7 +13,7 @@ class Main extends Component {
       <div>
         <h1> Simple SPA </h1>
         <HashRouter>
-          <div>
+          <div className="outline">
             <ul className="header">
               <li><NavLink to='/'>Home</NavLink></li>
               <li><NavLink to="/abilities">Abilities</NavLink></li>
