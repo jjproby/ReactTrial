@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   outline: 5px solid black;
 `;
 
-class Abilities extends Component {
+class Items extends Component {
   constructor() {
     super();
 
@@ -22,7 +22,7 @@ class Abilities extends Component {
   }
 
   search({query}) {
-    fetch(`https://pokeapi.co/api/v2/ability/${query}/`)
+    fetch(`https://pokeapi.co/api/v2/item/${query}/`)
         .then(res => res.json())
         .then(res => {
             return res;
@@ -44,41 +44,26 @@ class Abilities extends Component {
   render() {
     console.log(this.state.data)
 
-    const abilityEffects = this.state.data.effect_entries
+    const itemEffects = this.state.data.effect_entries
 
-    let effects = null;
-    let pokemon = [];
-    let generation = null;
+    let effect = null;
+    let sprite = null;
 
-    if (abilityEffects !== undefined) {
-      generation = this.state.data.generation.name
-      effects = this.state.data.effect_entries[0].effect
-      pokemon = this.state.data.pokemon.map((name, i) => {
-        return (
-          <li key={i}> {name.pokemon.name} </li>
-        )
-      })
+    if (itemEffects !== undefined) {
+      effect = this.state.data.effect_entries[0].effect
+      sprite = <img src={this.state.data.sprites.default} height="200" width="200" />;
     }
 
     return (
       <Wrapper>
-        <h2> Search for ability </h2>
-        <Search search = {this.search}/>
-        <p> Name : {this.state.data.name} </p>
-        <p> Effect: {effects} </p>
-        <p> Generation: {generation} </p>
-        <p> Pokemon with this ability: </p>
-        <ul>
-          {pokemon}
-        </ul>
-        {
-          this.state.error
-          ? <p>{this.state.error}</p>
-          : null
-        }
+        <h2> Items </h2>
+        <Search search={this.search} />
+        <p> Name: {this.state.data.name} </p>
+        <p> Effect: {effect} </p>
+        {sprite}
       </Wrapper>
-    );
+    )
   }
 }
 
-export default Abilities;
+export default Items
