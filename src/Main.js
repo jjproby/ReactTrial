@@ -7,6 +7,7 @@ import {
 import App from "./App";
 import Abilities from "./Abilities";
 import Items from "./Items";
+import Home from "./Home";
 
 class Main extends Component {
   render() {
@@ -22,6 +23,7 @@ class Main extends Component {
               <li><NavLink to="/items">Items</NavLink></li>
             </ul>
             <div className="content">
+              <Route exact path='/' component={Home}/>
               <Route path="/abilities" component={Abilities}/>
               <Route path="/pokemon" component={App}/>
               <Route path="/items" component={Items}/>

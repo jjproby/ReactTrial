@@ -60,7 +60,13 @@ class Items extends Component {
         <Search search={this.search} />
         <p> Name: {this.state.data.name} </p>
         <p> Effect: {effect} </p>
+        <p> Cost: {this.state.data.cost} </p>
         {sprite}
+        {
+          this.state.error
+          ? <p>{this.state.error}</p>
+          : null
+        }
       </Wrapper>
     )
   }
