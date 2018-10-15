@@ -157,11 +157,15 @@ class App extends Component {
 
     return (
       <Wrapper>
-        <div>
+        <div class="result">
           <Title> SEARCH FOR POKEMON </Title>
           <h2> Input a number 1 - 802 </h2>
           <Search search={this.search}/>
           <p> {backButton} {fowardButton} </p>
+          <p id="sprite1"> {sprite}</p>
+          <p id="sprite2" hidden = "true"> {shinysprite}
+          <br / > Shiny</p>
+          <p> {button} </p>
           <p> Name : {this.state.data.name}</p>
           <p> ID : {this.state.data.id}</p>
           <p> Height : {this.state.data.height}</p>
@@ -178,11 +182,6 @@ class App extends Component {
           <ul>
             {pokedex}
           </ul>
-          <p id="sprite1"> {sprite}
-          <br /> Default</p>
-          <p id="sprite2" hidden = "true"> {shinysprite}
-          <br / > Shiny</p>
-          <p> {button} </p>
           {
             this.state.error
             ? <p>{this.state.error}</p>

@@ -26,3 +26,7 @@ img.ball {
   float: right;
   bottom: 100px;
 }
+
+div.result {
+  text-align: center;
+}
