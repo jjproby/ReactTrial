@@ -58,6 +58,7 @@ class Items extends Component {
       <Wrapper>
         <div class="result">
           <h2> Items </h2>
+          <h2> Input number 1-919 </h2>
           <Search search={this.search} />
           <p> Name: {this.state.data.name} </p>
           <p> Effect: {effect} </p>

@@ -15,7 +15,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <h1> POKEMON SEARCH </h1>
+        <h1 class="title"> POKEMON SEARCH </h1>
         <img src={ball} class="ball" height="85" width="85" />
         <HashRouter>
           <div className="outline">

@@ -18,6 +18,8 @@ class query extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.state.query = this.state.query.toLowerCase();
+    this.state.query = this.state.query.replace(" ", "-");
     this.props.search(this.state);
     this.setState({ query: "" });
   }
