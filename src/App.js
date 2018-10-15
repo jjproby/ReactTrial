@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Search from './Search';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Title = styled.h1`
   text-align: center;
@@ -8,7 +8,8 @@ const Title = styled.h1`
 
 const Wrapper = styled.section`
   padding: 4em;
-  background: papayawhip;
+  background: #5995ea;
+  outline: 5px solid black;
 `;
 
 const Section = styled.p`
@@ -28,6 +29,8 @@ class App extends Component {
     };
 
     this.search = this.search.bind(this);
+    this.toggleForward = this.toggleForward.bind(this);
+    this.toggleBackward = this.toggleBackward.bind(this);
   }
 
 
@@ -68,6 +71,30 @@ class App extends Component {
   }));
 }
 
+  toggleForward() {
+    let searchQuery = Number(this.state.query);
+    let newQuery = null;
+    if (searchQuery === 802) {
+      newQuery = 1;
+    } else {
+      newQuery = Number(this.state.query) + 1;
+    }
+    this.setState({query: newQuery})
+    this.search({query: newQuery})
+  }
+
+  toggleBackward() {
+    let searchQuery = Number(this.state.query);
+    let newQuery = null;
+    if (searchQuery === 1) {
+      newQuery = 802;
+    } else {
+      newQuery = searchQuery - 1;
+    }
+    this.setState({query: newQuery});
+    this.search({query: newQuery})
+  }
+
   render () {
     console.log(this.state.data)
     console.log(this.state.data2)
@@ -75,6 +102,8 @@ class App extends Component {
     const abilities = this.state.data.abilities
     const games = this.state.data.game_indices
     const pokeData = this.state.data2.flavor_text_entries
+    const number = this.state.data.name
+    const site = "https://www.smogon.com/dex/sm/pokemon/" + number
 
     let abilitiesList = [];
     let sprite = null;
@@ -82,6 +111,8 @@ class App extends Component {
     let gameList = [];
     let button = null;
     let pokedex = [];
+    let fowardButton = null;
+    let backButton = null;
 
     const hideThing = () => {
       if (document.getElementById('sprite1').hidden === false) {
@@ -102,6 +133,8 @@ class App extends Component {
       sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
       shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
       button = <button type="button" onClick={hideThing}> Change Color </button>
+      fowardButton = <button type="button" onClick={this.toggleForward}> Next Pokemon </button>
+      backButton = <button type="button" onClick={this.toggleBackward}> Previous Pokemon </button>
     }
 
     if (pokeData !== undefined) {
@@ -128,6 +161,7 @@ class App extends Component {
           <Title> SEARCH FOR POKEMON </Title>
           <h2> Input a number 1 - 802 </h2>
           <Search search={this.search}/>
+          <p> {backButton} {fowardButton} </p>
           <p> Name : {this.state.data.name}</p>
           <p> ID : {this.state.data.id}</p>
           <p> Height : {this.state.data.height}</p>
@@ -154,6 +188,7 @@ class App extends Component {
             ? <p>{this.state.error}</p>
             : null
           }
+          <a href={site} target="_blank">Smogon Info</a>
         </div>
       </Wrapper>
     )
