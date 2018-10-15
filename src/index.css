@@ -1,0 +1,28 @@
+body {
+  background-color: #EA595B;
+  padding: 25px;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  display: inline-block;
+  padding: 20px;
+}
+
+ul.header {
+  background-color: #5995ea;
+  outline: 5px solid black;
+}
+
+img.ball {
+  position: relative;
+  float: right;
+  bottom: 100px;
+}
