@@ -20,3 +20,9 @@ ul.header {
   background-color: #5995ea;
   outline: 5px solid black;
 }
+
+img.ball {
+  position: relative;
+  float: right;
+  bottom: 100px;
+}

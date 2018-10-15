@@ -9,13 +9,14 @@ import Abilities from "./Abilities";
 import Items from "./Items";
 import Home from "./Home";
 import Moves from "./Moves";
-//import ball from './pokeball.jpg';
+import ball from './Pokeball.png';
 
 class Main extends Component {
   render() {
     return (
       <div>
         <h1> POKEMON SEARCH </h1>
+        <img src={ball} class="ball" height="85" width="85" />
         <HashRouter>
           <div className="outline">
             <ul className="header">
