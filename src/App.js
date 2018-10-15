@@ -188,7 +188,7 @@ class App extends Component {
             ? <p>{this.state.error}</p>
             : null
           }
-          <a href={site}>Smogon Info</a>
+          <a href={site} target="_blank">Smogon Info</a>
         </div>
       </Wrapper>
     )

@@ -9,6 +9,7 @@ import Abilities from "./Abilities";
 import Items from "./Items";
 import Home from "./Home";
 import Moves from "./Moves";
+//import ball from './pokeball.jpg';
 
 class Main extends Component {
   render() {
