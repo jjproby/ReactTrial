@@ -10,6 +10,10 @@ import Items from "./Items";
 import Home from "./Home";
 import Moves from "./Moves";
 import ball from './Pokeball.png';
+import char from './charmander.png';
+import squirt from './squirtle.png';
+import bulb from './bulbasaur.png';
+import pik from './pikachu.png';
 
 class Main extends Component {
   render() {
@@ -27,6 +31,10 @@ class Main extends Component {
               <li><NavLink to="/moves">Moves</NavLink></li>
             </ul>
             <div className="content">
+              <img src={char} class="char" height="85" width="100" />
+              <img src={squirt} class="squirt" height="85" width="100" />
+              <img src={bulb} class="bulb" height="85" width="100" />
+              <img src={pik} class="pik" height="85" width="100" />
               <Route exact path='/' component={Home}/>
               <Route path="/abilities" component={Abilities}/>
               <Route path="/pokemon" component={App}/>

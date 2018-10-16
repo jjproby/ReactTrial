@@ -34,6 +34,30 @@ img.ball {
   bottom: 100px;
 }
 
+img.char {
+  position: relative;
+  float: right;
+  left: 100px;
+  top: 5px;
+}
+
+img.squirt {
+  position: relative;
+  float: left;
+}
+
+img.bulb {
+  position: relative;
+  float: left;
+  left: 50px;
+}
+
+img.pik {
+  position: relative;
+  float: right;
+  left: 50px;
+}
+
 div.content {
   font-family: "pokemon-font", monospace;
   -webkit-font-smoothing: none;
