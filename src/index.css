@@ -11,6 +11,8 @@ h1.title{
 ul.header li {
   display: inline;
   list-style-type: none;
+  font-family: "pokemon-font", monospace;
+  -webkit-font-smoothing: none;
   margin: 0;
 }
 
@@ -32,8 +34,11 @@ img.ball {
   bottom: 100px;
 }
 
-div.result {
-  text-align: center;
+div.content {
   font-family: "pokemon-font", monospace;
   -webkit-font-smoothing: none;
+}
+
+div.result {
+  text-align: center;
 }

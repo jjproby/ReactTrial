@@ -22,7 +22,7 @@ class Main extends Component {
             <ul className="header">
               <li><NavLink to='/'>Home</NavLink></li>
               <li><NavLink to="/abilities">Abilities</NavLink></li>
-              <li><NavLink to="/pokemon">Name</NavLink></li>
+              <li><NavLink to="/pokemon">Pokemon</NavLink></li>
               <li><NavLink to="/items">Items</NavLink></li>
               <li><NavLink to="/moves">Moves</NavLink></li>
             </ul>

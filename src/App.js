@@ -130,7 +130,7 @@ class App extends Component {
           <li key={i}>{ability.ability.name}</li>
         );
       })
-      sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
+      sprite = <p> <img src={this.state.data.sprites.front_default} height="200" width="200"/> <br /> Default </p>;
       shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
       button = <button type="button" onClick={hideThing}> Change Color </button>
       fowardButton = <button type="button" onClick={this.toggleForward}> Next Pokemon </button>
