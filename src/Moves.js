@@ -48,19 +48,19 @@ class Moves extends Component {
       }
 
   toggleForward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 1000) {
       newQuery = 1;
     } else {
-      newQuery = Number(this.state.query) + 1;
+      newQuery = Number(this.state.data.id) + 1;
     }
     this.setState({query: newQuery})
     this.search({query: newQuery})
   }
 
   toggleBackward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 1) {
       newQuery = 1000;
@@ -92,19 +92,21 @@ class Moves extends Component {
 
     return (
       <Wrapper>
-        <Title> SEARCH FOR MOVES </Title>
-        <Search search = {this.search} />
-        <p> {backButton} {fowardButton} </p>
-        <p> Name : {this.state.data.name} </p>
-        <p> Accuracy : {this.state.data.accuracy} </p>
-        <p> Effect Chance : {this.state.data.effect_chance} </p>
-        <p> Power : {this.state.data.power} </p>
-        <p> {flavor} </p>
-        {
-          this.state.error
-          ? <p>{this.state.error}</p>
-          : null
-        }
+        <div class="result">
+          <Title> SEARCH FOR MOVES </Title>
+          <Search search = {this.search} />
+          <p> {backButton} {fowardButton} </p>
+          <p> Name : {this.state.data.name} </p>
+          <p> Accuracy : {this.state.data.accuracy} </p>
+          <p> Effect Chance : {this.state.data.effect_chance} </p>
+          <p> Power : {this.state.data.power} </p>
+          <p> {flavor} </p>
+          {
+            this.state.error
+            ? <p>{this.state.error}</p>
+            : null
+          }
+        </div>
       </Wrapper>
     );
   }

@@ -72,19 +72,19 @@ class App extends Component {
 }
 
   toggleForward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 802) {
       newQuery = 1;
     } else {
-      newQuery = Number(this.state.query) + 1;
+      newQuery = Number(this.state.data.id) + 1;
     }
     this.setState({query: newQuery})
     this.search({query: newQuery})
   }
 
   toggleBackward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 1) {
       newQuery = 802;
@@ -130,7 +130,7 @@ class App extends Component {
           <li key={i}>{ability.ability.name}</li>
         );
       })
-      sprite = <img src={this.state.data.sprites.front_default} height="200" width="200"/>;
+      sprite = <p> <img src={this.state.data.sprites.front_default} height="200" width="200"/> <br /> Default </p>;
       shinysprite = <img src={this.state.data.sprites.front_shiny} height="200" width="200" />;
       button = <button type="button" onClick={hideThing}> Change Color </button>
       fowardButton = <button type="button" onClick={this.toggleForward}> Next Pokemon </button>
@@ -157,11 +157,15 @@ class App extends Component {
 
     return (
       <Wrapper>
-        <div>
+        <div class="result">
           <Title> SEARCH FOR POKEMON </Title>
           <h2> Input a number 1 - 802 </h2>
           <Search search={this.search}/>
           <p> {backButton} {fowardButton} </p>
+          <p id="sprite1"> {sprite}</p>
+          <p id="sprite2" hidden = "true"> {shinysprite}
+          <br / > Shiny</p>
+          <p> {button} </p>
           <p> Name : {this.state.data.name}</p>
           <p> ID : {this.state.data.id}</p>
           <p> Height : {this.state.data.height}</p>
@@ -178,11 +182,6 @@ class App extends Component {
           <ul>
             {pokedex}
           </ul>
-          <p id="sprite1"> {sprite}
-          <br /> Default</p>
-          <p id="sprite2" hidden = "true"> {shinysprite}
-          <br / > Shiny</p>
-          <p> {button} </p>
           {
             this.state.error
             ? <p>{this.state.error}</p>

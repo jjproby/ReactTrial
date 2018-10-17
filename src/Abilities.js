@@ -48,19 +48,19 @@ class Abilities extends Component {
       }
 
   toggleForward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 232) {
       newQuery = 1;
     } else {
-      newQuery = Number(this.state.query) + 1;
+      newQuery = Number(this.state.data.id) + 1;
     }
     this.setState({query: newQuery})
     this.search({query: newQuery})
   }
 
   toggleBackward() {
-    let searchQuery = Number(this.state.query);
+    let searchQuery = Number(this.state.data.id);
     let newQuery = null;
     if (searchQuery === 1) {
       newQuery = 232;
@@ -96,22 +96,24 @@ class Abilities extends Component {
 
     return (
       <Wrapper>
-        <Title> SEARCH FOR ABILITY</Title>
-        <h2> Input number 1 - 232 </h2>
-        <Search search = {this.search}/>
-        <p> {backButton} {fowardButton} </p>
-        <p> Name : {this.state.data.name} </p>
-        <p> Effect: {effects} </p>
-        <p> Generation: {generation} </p>
-        <p> Pokemon with this ability: </p>
-        <ul>
-          {pokemon}
-        </ul>
-        {
-          this.state.error
-          ? <p>{this.state.error}</p>
-          : null
-        }
+        <div class="result">
+          <Title> SEARCH FOR ABILITY</Title>
+          <h2> Input number 1 - 232 </h2>
+          <Search search = {this.search}/>
+          <p> {backButton} {fowardButton} </p>
+          <p> Name : {this.state.data.name} </p>
+          <p> Effect: {effects} </p>
+          <p> Generation: {generation} </p>
+          <p> Pokemon with this ability: </p>
+          <ul>
+            {pokemon}
+          </ul>
+          {
+            this.state.error
+            ? <p>{this.state.error}</p>
+            : null
+          }
+        </div>
       </Wrapper>
     );
   }

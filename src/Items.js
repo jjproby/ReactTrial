@@ -56,17 +56,20 @@ class Items extends Component {
 
     return (
       <Wrapper>
-        <h2> Items </h2>
-        <Search search={this.search} />
-        <p> Name: {this.state.data.name} </p>
-        <p> Effect: {effect} </p>
-        <p> Cost: {this.state.data.cost} </p>
-        {sprite}
-        {
-          this.state.error
-          ? <p>{this.state.error}</p>
-          : null
-        }
+        <div class="result">
+          <h2> Items </h2>
+          <h2> Input number 1-919 </h2>
+          <Search search={this.search} />
+          <p> Name: {this.state.data.name} </p>
+          <p> Effect: {effect} </p>
+          <p> Cost: {this.state.data.cost} </p>
+          {sprite}
+          {
+            this.state.error
+            ? <p>{this.state.error}</p>
+            : null
+          }
+        </div>
       </Wrapper>
     )
   }

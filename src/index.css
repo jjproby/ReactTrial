@@ -3,9 +3,16 @@ body {
   padding: 25px;
 }
 
+h1.title{
+  font-family: "pokemon-font", monospace;
+  -webkit-font-smoothing: none;
+}
+
 ul.header li {
   display: inline;
   list-style-type: none;
+  font-family: "pokemon-font", monospace;
+  -webkit-font-smoothing: none;
   margin: 0;
 }
 
@@ -25,4 +32,37 @@ img.ball {
   position: relative;
   float: right;
   bottom: 100px;
+}
+
+img.char {
+  position: relative;
+  float: right;
+  left: 100px;
+  top: 5px;
+}
+
+img.squirt {
+  position: relative;
+  float: left;
+}
+
+img.bulb {
+  position: relative;
+  float: left;
+  left: 50px;
+}
+
+img.pik {
+  position: relative;
+  float: right;
+  left: 100px;
+}
+
+div.content {
+  font-family: "pokemon-font", monospace;
+  -webkit-font-smoothing: none;
+}
+
+div.result {
+  text-align: center;
 }
