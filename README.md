@@ -2,8 +2,9 @@
 
 #### This is a personal project for the class _CSC358_
 
-This project was made with the intention to learn how to use ReactJS
-The goal is to make a simple web application using ReactJS and learn about open source development
+This project was made with the intention to learn how to use ReactJS.
+The goal is to make a simple web application using ReactJS and learn about open source development.
+
 You can visit the completed project [here!](https://reactproject.netlify.com/)
 
 #### What does this project **do?**
